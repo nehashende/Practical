@@ -1,0 +1,58 @@
+AndroidManifest.xml
+<uses-permission android.name = "android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android.name = "android.permission.CHANGE_WIFI_STATE" />
+
+activity_main.xml
+<?xml version ="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+android.layout_width = "match_parent"
+android.layout_height = "match_parent"
+android.layout_margin = "16dp" >
+
+<ToggleButton
+android.id = "@+id/tB"
+android.layout_width = "wrap_content"
+android.layout_height = "wrap_content"
+android.checked = "false" />
+
+<TextView
+android.id = "@+id/tV"
+android.layout_width = "wrap_content"
+android.layout_height = "wrap_content"
+/>
+
+</LinearLayout>
+
+MainActivity.java
+package com.MyApp;
+import android.content.Context;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.CompoundButton;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
+public class MainActivity extends AppCompatActivity
+{
+    ToggleButton tB;
+    TextView tV;
+    
+    @Override
+    protected void onCreate(Bundle s)
+    {
+        super.onCreate(s);
+        setContentView(R.layout.turn);
+        tB = (ToggleButton)findViewById(R.id.tB);
+        tV = (TextView)findViewById(R.id.tV);
+        
+        tB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton cb, boolean chk)
+            {
+                
+            }
+        })
+    }
+}
